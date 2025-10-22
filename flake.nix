@@ -18,7 +18,7 @@
         manifest = builtins.fromTOML ( builtins.readFile manifestPath );
 
       in {
-        packages."${system}".default = pkgs.rustPlatform.buildRustPackage rec {
+        packages.default = pkgs.rustPlatform.buildRustPackage rec {
           pname = manifest.package.name;
           version = manifest.package.version;
           src = rustSrc;
